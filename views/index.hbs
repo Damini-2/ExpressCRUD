@@ -1,0 +1,60 @@
+{{>header}}
+<title>CRUD | Home</title>
+{{>navbar}}
+
+{{#if show}}
+<div class="alert alert-success alert-dismissible fade show text-center" role="alert">
+    {{message}}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{{/if}}
+
+<div class="hdiv p-1 m-1 fs-5 background">
+    <h5 class="text-light text-center ">Employee 
+    <a href="/add"><i class="bi bi-plus-square text-light p-2"></i></a>
+    {{!-- <i class="bi bi-plus-square"></i> --}}
+    {{!-- text-light fs-4 --}}
+    </h5>
+</div>
+
+
+<div class="container-fluid">
+    <div class="table-responsive">
+        <table class="table table-light thead-light table-hover table-responsive table-bordered table-sm">
+{{!-- table-striped table-sm --}}
+            <tbody>
+                <tr class="table-primary">
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Salary</th>
+                    <th>Designation</th>
+                    <th>Gender</th>
+                    <th>City</th>
+                    <th>State</th>
+                </tr>
+                {{#each datakey}}
+                <tr>
+                    <td>{{idTrim _id}}</td>
+                    <td>{{name}}</td>
+                    <td>{{email}}</td>
+                    <td>{{phone}}</td>
+                    <td>{{salary}}</td>
+                    <td>{{dsg}}</td>
+                    <td>{{gender}}</td>
+                    <td>{{city}}</td>
+                    <td>{{state}}</td>
+                    <td><a href="/update?_id={{_id}}" class="btn text-primary"><i class="bi bi-pencil-square"></i></a>
+                    </td>
+                    <td><button class="btn text-primary"
+                            onclick="confirm('Are You Sure to Delete that Item')?window.open('/delete/{{_id}}'):''"><i
+                                class="bi bi-trash"></i></button>
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</div>
+{{>footer}}

@@ -1,0 +1,68 @@
+{{>header}}
+<title>CRUD | Add Record</title>
+{{>navbar}}
+<h5 class="background text-light text-center p-2 mt-1">Update Employee Record</h5>
+<div class="container">
+    {{#if show}}
+    <div class="alert alert-danger" role="alert">
+        {{message}}
+    </div>
+    {{/if}}
+    <form method="post" action="/update?_id={{datakey._id}}">
+        <div class="row mb-3">
+            <div class="col-md-6 col-12">
+                <label class="form-label">Name</label>
+                <input type="text" class="form-control" name="name" placeholder="Enter Employee Name : "
+                    value="{{datakey.name}}">
+            </div>
+            <div class="col-md-6 col-12">
+                <label class="form-label">Email</label>
+                <input type="email" class="form-control" name="email" placeholder="Enter Email Id : "
+                    value="{{datakey.email}}">
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-6 col-12">
+                <label class="form-label">Phone</label>
+                <input type="text" class="form-control" name="phone" placeholder="Enter Phone Number : "
+                    value="{{datakey.phone}}">
+            </div>
+            <div class="col-md-6 col-12">
+                <label class="form-label">Designation</label>
+                <input type="text" class="form-control" name="dsg" placeholder="Enter Designation : "
+                    value="{{datakey.dsg}}">
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-6 col-12">
+                <label class="form-label">Salary</label>
+                <input type="number" class="form-control" name="salary" placeholder="Enter Salary : "
+                    value="{{datakey.salary}}">
+            </div>
+            <div class="col-md-6 col-12">
+                <label class="form-label">Gender</label>
+                <br>
+                {{#ifCond datakey.gender 'Male'}}
+                {{/ifCond}}
+                {{#ifCond datakey.gender 'Female'}}
+                {{/ifCond}}
+                {{#ifCond datakey.gender 'Other'}}
+                {{/ifCond}}
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-6 col-12">
+                <label class="form-label">City</label>
+                <input type="text" class="form-control" name="city" placeholder="Enter City Name : "
+                    value="{{datakey.city}}">
+            </div>
+            <div class="col-md-6 col-12">
+                <label class="form-label">State</label>
+                <input type="text" class="form-control" name="state" placeholder="Enter State Name : "
+                    value="{{datakey.state}}">
+            </div>
+        </div>
+        <button type="submit" class="btn background text-light btn-sm w-100 mybtn">Update</button>
+    </form>
+</div>
+{{>footer}}

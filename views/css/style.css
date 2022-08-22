@@ -1,0 +1,16 @@
+
+.background{
+    background-color: rgb(226, 43, 147);
+}
+.mybtn:hover{
+    background-color: rgb(205, 89, 155);    
+}
+.textcolor{
+    color:  rgb(226, 43, 147);
+}
+.textcolor:hover{
+    color:  rgb(226, 43, 147);
+}
+.texthover:hover{
+    color:  rgb(226, 43, 147);
+}
