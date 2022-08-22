@@ -77,7 +77,7 @@ app.post("/add",encoder,async(req,res)=>{
 })
 
 app.get("/delete/:_id", async (req, res) => {
-    await Employee.deleteOne({ _id: req.params._id })
+    //await Employee.deleteOne({ _id: req.params._id })
 
     res.redirect("/")
 })
