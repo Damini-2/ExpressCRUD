@@ -121,8 +121,8 @@ app.post("/search", encoder, async (req, res) => {
     }
 })
 
-
-const PORT = process.env.PORT || 8000
+// process.env.PORT ||
+const PORT =  8000
 app.listen(PORT,()=>{
     console.log(`Server is Running at Port ${PORT}...`);
 })
